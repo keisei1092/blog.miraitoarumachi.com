@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  resources :tweets
-  resources :articles
+  resources :tweets, only: [:index, :new, :create, :show, :destroy]
+  resources :articles, only: [:index, :new, :create, :show, :edit, :update]
+
+  match 'articles/category/:category' => 'articles#category', via: :get
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

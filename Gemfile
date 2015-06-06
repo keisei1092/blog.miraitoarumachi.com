@@ -44,8 +44,6 @@ group :development, :test do
 end
 
 gem 'rb-readline'
-gem 'less-rails'
-gem 'twitter-bootstrap-rails'
-gem 'twitter-bootswatch-rails', '~> 3.2.0'
-gem 'twitter-bootswatch-rails-helpers'
+gem 'bootstrap-sass'
 gem 'redcarpet'
+gem 'hirb-unicode'
