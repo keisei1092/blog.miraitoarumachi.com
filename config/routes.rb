@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :tweets, only: [:index, :new, :create, :show, :destroy]
-  resources :articles, only: [:index, :new, :create, :show, :edit, :update]
+  resources :tweets, only: [:index, :create, :show, :destroy]
+  resources :articles, only: [:index, :create, :show, :edit, :update]
 
   match 'articles/category/:category' => 'articles#category', via: :get
 

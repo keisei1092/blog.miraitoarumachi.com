@@ -2,8 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#menus p {
+  margin-bottom: 5px;
+  a {
+    color: #444;
+  }
+}
+
 a.title {
-  color: #000;
+  color: #444;
 }
 
 h2.article-title {

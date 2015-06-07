@@ -1,28 +1,26 @@
 class TweetsController < ApplicationController
+  protect_from_forgery with: :null_session
   before_action :set_tweet, only: [:show, :destroy]
 
   # GET /tweets
   # GET /tweets.json
   def index
     @tweet = Tweet.new
-    @tweets = Tweet.all
+    @tweets = Tweet.all.reverse_order
   end
 
   # GET /tweets/1
   # GET /tweets/1.json
   def show
-  end
-
-  # GET /tweets/new
-  def new
-    @tweet = Tweet.new
-    @tweets = Tweet.all
+    @tweets = Twee.all.reverse_order
   end
 
   # POST /tweets
   # POST /tweets.json
   def create
-    @tweet = Tweet.new(tweet_params)
+    @tweet = Tweet.new
+    @tweet.content = params[:content]
+    @tweets = Tweet.all.reverse_order
 
     respond_to do |format|
       if @tweet.save

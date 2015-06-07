@@ -1,23 +1,18 @@
 class ArticlesController < ApplicationController
+  protect_from_forgery with: :null_session
   before_action :set_article, only: [:show, :edit, :update]
 
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
-    @tweets = Tweet.all
+    @articles = Article.all.reverse_order
+    @tweets = Tweet.all.reverse_order
   end
 
   # GET /articles/1
   # GET /articles/1.json
   def show
-    @tweets = Tweet.all
-  end
-
-  # GET /articles/new
-  def new
-    @article = Article.new
-    @tweets = Tweet.all
+    @tweets = Tweet.all.reverse_order
   end
 
   # GET /articles/1/edit
@@ -27,7 +22,10 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.json
   def create
-    @article = Article.new(article_params)
+    @article = Article.new
+    @article.title = params[:title]
+    @article.category = params[:category]
+    @article.content = params[:content]
 
     respond_to do |format|
       if @article.save
@@ -66,8 +64,8 @@ class ArticlesController < ApplicationController
 
   # GET articles/category/:category
   def category
-    @articles = Article.where("category = '#{params[:category]}'")
-    @tweets = Tweet.all
+    @articles = Article.where("category = '#{params[:category]}'").reverse_order
+    @tweets = Tweet.all.reverse_order
   end
 
   private
@@ -78,6 +76,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :content)
+      params.require(:article).permit(:title, :category, :content)
     end
 end

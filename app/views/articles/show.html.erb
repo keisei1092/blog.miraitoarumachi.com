@@ -1,4 +1,5 @@
 <%- model_class = Article -%>
+<% content_for :title, "#{@article.title} | keisei" %>
 
 <div id="article">
   <h2 class="article-title"><%= @article.title %></h2>
