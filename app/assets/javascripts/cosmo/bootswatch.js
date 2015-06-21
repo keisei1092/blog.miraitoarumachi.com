@@ -1,3 +1,0 @@
-// Cosmo
-// Bootswatch
-// bootswatch.js

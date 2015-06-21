@@ -1,3 +1,0 @@
-// Default
-// Bootswatch
-// bootswatch.js
