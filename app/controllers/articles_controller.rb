@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all.reverse_order
+    @articles = Article.all.reverse_order.page(params[:page])
     @tweets = Tweet.all.reverse_order
   end
 
@@ -64,7 +64,7 @@ class ArticlesController < ApplicationController
 
   # GET articles/category/:category
   def category
-    @articles = Article.where("category = '#{params[:category]}'").reverse_order
+    @articles = Article.where("category = '#{params[:category]}'").reverse_order.page(params[:page])
     @tweets = Tweet.all.reverse_order
   end
 
