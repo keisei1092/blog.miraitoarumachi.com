@@ -1,8 +1,9 @@
 <%- model_class = Article -%>
 
 <% @articles.each do |article| %>
-  <div id="article">
+  <div class="article">
     <h2 class="article-title"><%= link_to article.title, article_path(article), class: "title" %></h2>
+    <a style="display: none" class="parmalink_for_star">a</a>
     <p class="posting-date"><i><%= article.category %> - Posted on <%=l article.created_at, format: :original %></i></p>
     <%= markdown(article.content) %>
   </div>

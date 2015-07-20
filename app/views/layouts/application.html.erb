@@ -37,6 +37,22 @@
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
     <%= javascript_include_tag "application" %>
+
+    <!-- Hatena Star -->
+    <script type="text/javascript" src="http://s.hatena.ne.jp/js/HatenaStar.js"></script>
+    <script type="text/javascript">
+      Hatena.Star.Token = '8485e97e35712be0833707fdd2247293d65b2eaf';
+      
+      Hatena.Star.SiteConfig = {
+        entryNodes: {
+          'div.article': {
+            uri: 'h2 a',
+            title: 'h2',
+            container: 'h2'
+          }
+        }
+      };
+    </script>
   </head>
   <body>
     <div id="fb-root"></div>
