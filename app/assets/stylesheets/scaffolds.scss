@@ -1,14 +1,25 @@
 body {
   background-color: #fff;
   color: #333;
-  font-family: "Hiragino Mincho ProN", Helvetica Neue, verdana, arial, sans-serif;
+  font-family: YuMincho, "Yu Mincho", "游明朝", "Meiryo", serif;
+  -webkit-font-smoothing: antialiased;
   font-size: 13px;
-  line-height: 18px;
+  line-height: 1.6em;
 }
+
+nav.pagination {
+  width: 100%;
+  text-align: right;
+} 
 
 h1, h2, h3, h4, h5, h6 {
   color: #444;
   font-weight: bold;
+}
+
+h2:not(.article-title) {
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 5px;
 }
 
 h3#hakidame {
@@ -16,14 +27,19 @@ h3#hakidame {
 }
 
 p, ol, ul, td {
-  font-family: "Hiragino Mincho ProN", Helvetica Neue, verdana, arial, sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
 
-div#article p {
-  margin-top: 18px;
-  margin-bottom: 18px;
+div#article {
+  margin-bottom: 54px;
+  p {
+    margin-top: 18px;
+    margin-bottom: 18px;
+  }
+  img {
+      max-width: 100%;
+  }
 }
 
 ul#hakidame {
